@@ -19,12 +19,12 @@
   },
   "name":"GMTK_game_jam_2026",
   "resources":[
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"TestName","path":"rooms/TestName/TestName.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"TestName","path":"rooms/TestName/TestName.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
