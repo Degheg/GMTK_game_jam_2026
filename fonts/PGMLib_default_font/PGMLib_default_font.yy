@@ -192,7 +192,7 @@
   "name":"PGMLib_default_font",
   "parent":{
     "name":"PGMLib",
-    "path":"folders/PGMLib.yy",
+    "path":"folders/libraries/PGMLib.yy",
   },
   "pointRounding":0,
   "ranges":[

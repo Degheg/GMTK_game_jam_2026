@@ -45,7 +45,7 @@
   "origin":4,
   "parent":{
     "name":"PGMLib",
-    "path":"folders/PGMLib.yy",
+    "path":"folders/libraries/PGMLib.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

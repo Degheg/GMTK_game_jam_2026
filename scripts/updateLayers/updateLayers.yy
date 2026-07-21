@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"PGMLib",
+  "%Name":"updateLayers",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PGMLib",
+  "name":"updateLayers",
   "parent":{
-    "name":"PGMLib",
-    "path":"folders/libraries/PGMLib.yy",
+    "name":"DepthEngine",
+    "path":"folders/libraries/DepthEngine.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"PGMLib_Boxes",
   "parent":{
     "name":"PGMLib",
-    "path":"folders/PGMLib.yy",
+    "path":"folders/libraries/PGMLib.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

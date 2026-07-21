@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"credits",
+  "name":"credits",
+  "parent":{
+    "name":"DepthEngine",
+    "path":"folders/libraries/DepthEngine.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
