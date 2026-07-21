@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PGMLib",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PGMLib",
+  "parent":{
+    "name":"PGMLib",
+    "path":"folders/PGMLib.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
