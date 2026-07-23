@@ -31,7 +31,7 @@
   "origin":7,
   "parent":{
     "name":"sprites",
-    "path":"folders/sprites.yy",
+    "path":"folders/assets/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

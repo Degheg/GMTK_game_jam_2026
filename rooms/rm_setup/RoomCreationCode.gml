@@ -1,1 +1,1 @@
-room_goto(rm_testroom)
+global.room_id = [1, true]

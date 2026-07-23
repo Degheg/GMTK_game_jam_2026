@@ -28,5 +28,3 @@ if keyboard_check_pressed(global.keybinds.jump) and can_jump {
 // apply velocity
 x += velocity.x;
 y += velocity.y
-
-
