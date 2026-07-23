@@ -12,6 +12,12 @@ else {
 // x velocity, for now only affected by keyboard inputs
 velocity.x = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed; 
 
+// x plane collision
+
+if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
+	velocity.x = 0
+}
+
 // jump
 if keyboard_check_pressed(global.keybinds.jump) and can_jump {
 	velocity.y = -15
