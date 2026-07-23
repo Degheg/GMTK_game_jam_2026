@@ -14,10 +14,10 @@ can_jump = true
 can_grab_ladder = true
 
 //stop the previous audio cause it's not exactly 5 seconds long
-if audio_is_playing(snd_switch_placeholder) {
-	audio_stop_sound(snd_switch_placeholder)
-}
-audio_play_sound(snd_switch_placeholder, 1, 100)
+//if audio_is_playing(snd_switch_placeholder) {
+//	audio_stop_sound(snd_switch_placeholder)
+//}
+//audio_play_sound(snd_switch_placeholder, 1, 100)
 
 alarm[0] = 5*game_get_speed(gamespeed_fps);
 

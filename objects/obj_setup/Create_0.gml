@@ -27,3 +27,5 @@ global.rooms = ds_grid_create(2, 3) //total number of levels
 global.rooms[# 0, false] = rm_setup
 global.rooms[# 1, false] = rm_testroom_down
 global.rooms[# 1, true] = rm_testroom_up
+
+audio_play_sound(prototype1, 1, true, 100)

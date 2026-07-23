@@ -62,6 +62,7 @@
     {"id":{"name":"PGMLib_Boxes","path":"scripts/PGMLib_Boxes/PGMLib_Boxes.yy",},},
     {"id":{"name":"PGMLib","path":"scripts/PGMLib/PGMLib.yy",},},
     {"id":{"name":"updateLayers","path":"scripts/updateLayers/updateLayers.yy",},},
+    {"id":{"name":"prototype1","path":"sounds/prototype1/prototype1.yy",},},
     {"id":{"name":"snd_switch_placeholder","path":"sounds/snd_switch_placeholder/snd_switch_placeholder.yy",},},
     {"id":{"name":"PGMLib_sprite","path":"sprites/PGMLib_sprite/PGMLib_sprite.yy",},},
     {"id":{"name":"spr_ladder_cmask","path":"sprites/spr_ladder_cmask/spr_ladder_cmask.yy",},},
