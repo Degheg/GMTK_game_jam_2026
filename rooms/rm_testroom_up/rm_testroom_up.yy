@@ -33,6 +33,8 @@
     {"name":"inst_54E77451","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},
     {"name":"inst_7FD507F6","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},
     {"name":"inst_17793907","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},
+    {"name":"inst_54A21A9E","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},
+    {"name":"inst_374A6B42","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -41,7 +43,10 @@
           1,-29,-2147483648,-5,1,-8,-2147483648,1,1,-42,-2147483648,-2,1,-42,-2147483648,-3,1,-54,-2147483648,
           -6,0,-32,-2147483648,-15,1,-151,-2147483648,-4,1,-419,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_test_tileset_transparent","path":"tilesets/ts_test_tileset_transparent/ts_test_tileset_transparent.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRInstanceLayer":"","%Name":"Instances_tracker","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Instances_tracker","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Instances_tracker","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_54A21A9E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54A21A9E","objectId":{"name":"obj_moving_platform_limit_tracker","path":"objects/obj_moving_platform_limit_tracker/obj_moving_platform_limit_tracker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":640.0,},
+        {"$GMRInstance":"v4","%Name":"inst_374A6B42","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_374A6B42","objectId":{"name":"obj_moving_platform_limit_tracker","path":"objects/obj_moving_platform_limit_tracker/obj_moving_platform_limit_tracker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":640.0,},
+      ],"layers":[],"name":"Instances_tracker","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_37A043C0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_37A043C0","objectId":{"name":"obj_camera_control","path":"objects/obj_camera_control/obj_camera_control.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_1155730D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1155730D","objectId":{"name":"obj_reality_control","path":"objects/obj_reality_control/obj_reality_control.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},

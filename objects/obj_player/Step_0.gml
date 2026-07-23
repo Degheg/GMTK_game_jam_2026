@@ -2,6 +2,9 @@
 // make sure to know what you're doing before modifying it
 
 
+// moving platform floor collision 
+var _movingPlatform_f = instance_place(x, y+velocity.y+2, obj_moving_platform)
+
 // tilemap floor collision
 if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 	////print("floor collision")
@@ -9,17 +12,15 @@ if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 	can_jump = true
 }
 
-// moving platform collision
-
-var _movingPlatform = instance_place(x, y+velocity.y+2, obj_moving_platform)
-if (_movingPlatform && bbox_bottom <= _movingPlatform.bbox_top) {
-	////print("floor collision")
+else if (_movingPlatform_f && bbox_bottom <= _movingPlatform_f.bbox_top) {
 	show_debug_message("On moving platform")
 	velocity.y = 0
 	can_jump = true
-	x += sign(cos(obj_moving_platform.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
+	x += sign(cos(_movingPlatform_f.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
+	y += sign(-sin(_movingPlatform_f.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
+	print(x)
+	print(y)
 }
-
 
 // freefall
 else {
@@ -79,12 +80,22 @@ if keyboard_check_pressed(global.keybinds.jump){
 		}
 	}
 
-}
+};
 
 //ceiling collision
 if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 	velocity.y = 0
 };
+
+//moving platform ceiling collision
+//var _movingPlatform_c = instance_place(x, y-33, obj_moving_platform)
+//if (_movingPlatform_c && bbox_top <= _movingPlatform_c.bbox_bottom) {
+//	show_debug_message("Below moving platform")
+//	velocity.y = 0
+//	can_jump = false
+//	x += sign(cos(_movingPlatform_c.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
+//	y = _movingPlatform_c.bbox_bottom + 31
+//}
 
 
 // apply velocity
