@@ -43,6 +43,7 @@
     {"id":{"name":"PGMLib_default_font","path":"fonts/PGMLib_default_font/PGMLib_default_font.yy",},},
     {"id":{"name":"credits","path":"notes/credits/credits.yy",},},
     {"id":{"name":"obj_active","path":"objects/obj_active/obj_active.yy",},},
+    {"id":{"name":"obj_camera_control","path":"objects/obj_camera_control/obj_camera_control.yy",},},
     {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},},
     {"id":{"name":"obj_layerControl","path":"objects/obj_layerControl/obj_layerControl.yy",},},
     {"id":{"name":"obj_parent","path":"objects/obj_parent/obj_parent.yy",},},

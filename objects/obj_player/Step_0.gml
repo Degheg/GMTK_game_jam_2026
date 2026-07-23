@@ -77,3 +77,5 @@ if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 // apply velocity
 x += velocity.x div 1;
 y += velocity.y div 1
+
+
