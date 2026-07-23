@@ -3,7 +3,7 @@
 
 
 // tilemap floor collision
-if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
+if place_meeting(x, y+velocity.y+2, [player_cons.level_tilemap, obj_moving_platform]) {
 	////print("floor collision")
 	velocity.y = 0
 	can_jump = true

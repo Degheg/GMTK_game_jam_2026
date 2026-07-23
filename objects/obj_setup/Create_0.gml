@@ -8,12 +8,18 @@ global.keybinds =
 	jump: 32
 }
 
-//player variables to keep track when changing reality
+//player variables to keep track of when changing reality
 global.player =
 {
 	x: 256,
 	y: 320,
 	velocity: {x:0, y:0}
+}
+
+//positions of moving platforms to keep track of when changing reality
+global.moving_platforms =
+{
+
 }
 
 //room_id[0] is for the level (not sure we're gonna make more than one level tho

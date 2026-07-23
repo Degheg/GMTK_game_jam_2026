@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_reality_control",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_moving_platform_limit_tracker",
+  "eventList":[],
   "managed":true,
-  "name":"obj_reality_control",
+  "name":"obj_moving_platform_limit_tracker",
   "overriddenProperties":[],
   "parent":{
-    "name":"control",
-    "path":"folders/objects/control.yy",
+    "name":"trackers",
+    "path":"folders/objects/active_props/trackers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_moving_platform_limit",
+    "path":"sprites/spr_moving_platform_limit/spr_moving_platform_limit.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
