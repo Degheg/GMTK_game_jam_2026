@@ -3,11 +3,24 @@
 
 
 // tilemap floor collision
-if place_meeting(x, y+velocity.y+2, [player_cons.level_tilemap, obj_moving_platform]) {
+if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 	////print("floor collision")
 	velocity.y = 0
 	can_jump = true
 }
+
+// moving platform collision
+
+var _movingPlatform = instance_place(x, y+velocity.y+2, obj_moving_platform)
+if (_movingPlatform && bbox_bottom <= _movingPlatform.bbox_top) {
+	////print("floor collision")
+	show_debug_message("On moving platform")
+	velocity.y = 0
+	can_jump = true
+	x += sign(cos(obj_moving_platform.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
+}
+
+
 // freefall
 else {
 	////print("freefall")
