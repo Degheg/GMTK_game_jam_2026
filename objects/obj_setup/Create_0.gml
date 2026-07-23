@@ -3,6 +3,8 @@ global.keybinds =
 {
 	left: 65,
 	right: 68,
+	up: 87,
+	down: 83,
 	jump: 32
 }
 

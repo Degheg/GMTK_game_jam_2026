@@ -1,30 +1,79 @@
-// tilemap collision
-if place_meeting(x, y+2, player_cons.level_tilemap) {
+// THE ORDER AT WICH COLLISIONS ARE CHECKED IS IMPORTANT
+// make sure to know what you're doing before modifying it
+
+
+// tilemap floor collision
+if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
+	////print("floor collision")
 	velocity.y = 0
 	can_jump = true
 }
 // freefall
 else {
-	velocity.y = min(velocity.y+1, player_cons.max_fall_speed) 
+	////print("freefall")
+	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
+	velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
 };
 
 
 // x velocity, for now only affected by keyboard inputs
 velocity.x = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed; 
 
-// x plane collision
-
+// right wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
-	velocity.x = 0
+	////print("right wall")
+	//making it impossible to move further right instead of locking th player in place
+	velocity.x = -keyboard_check(global.keybinds.left)*_speed; 
+};
+//left wall collision
+if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
+	////print("left wall")
+	//making it impossible to move further left instead of locking th player in place
+	velocity.x = keyboard_check(global.keybinds.right)*_speed;
+};
+
+// ladder climbing
+if place_meeting(x, y, obj_ladder) {	
+	//lock the player on the ladder
+	if can_grab_ladder {
+		velocity.y = 0
+		can_jump = true
+		var current_ladder = instance_place(x, y, obj_ladder)
+		x = current_ladder.x + 16
+		velocity.x = 0
+	};
+	
+	print(can_grab_ladder);
+	
+	//moving on the ladder
+	if keyboard_check(global.keybinds.up)
+		velocity.y = -player_cons.ladder_speed
+	else if keyboard_check(global.keybinds.down) {
+		velocity.y = player_cons.ladder_speed
+	}
 }
+else {
+	can_grab_ladder = true
+};
 
 // jump
-if keyboard_check_pressed(global.keybinds.jump) and can_jump {
-	velocity.y = -15
-	can_jump = false
+if keyboard_check_pressed(global.keybinds.jump){
+	if can_jump {
+		velocity.y = -player_cons.jump_height
+		can_jump = false
+		if place_meeting(x, y, obj_ladder) {
+			can_grab_ladder = false
+		}
+	}
+
 }
+
+//ceiling collision
+if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
+	velocity.y = 0
+};
 
 
 // apply velocity
-x += velocity.x;
-y += velocity.y
+x += velocity.x div 1;
+y += velocity.y div 1
