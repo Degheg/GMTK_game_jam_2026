@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"lever_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"lever_functions",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -4,5 +4,6 @@ global.keybinds =
 	right: 68,
 	up: 90,
 	down: 83,
-	jump: 32
+	jump: 32,
+	interact: 69
 }

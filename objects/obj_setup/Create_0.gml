@@ -5,14 +5,22 @@ global.keybinds =
 	right: 68,
 	up: 87,
 	down: 83,
-	jump: 32
+	jump: 32,
+	interact: 69
+}
+
+//
+global.spawn_point =
+{
+	x: 1350,
+	y: 76
 }
 
 //player variables to keep track of when changing reality
 global.player =
 {
-	x: 256,
-	y: 320,
+	x: global.spawn_point.x,
+	y: global.spawn_point.y,
 	velocity: {x:0, y:0}
 }
 
@@ -23,7 +31,6 @@ global.moving_platforms =
 }
 
 // time for reality shift
-
 global.shift_time = 5
 
 

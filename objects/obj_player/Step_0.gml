@@ -20,10 +20,10 @@ input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.ke
 velocity.x = input_vx
 
 // moving platform floor collision 
-var _movingPlatform = instance_place(x, y+velocity.x, obj_moving_platform)
+var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
 
 if (_movingPlatform != noone) {
-	if y < _movingPlatform.y+15 {
+	if y < _movingPlatform.y+16 {
 		velocity.x = _movingPlatform.velocity.x + input_vx;
 		velocity.y = _movingPlatform.velocity.y;
 		can_jump = true
@@ -104,9 +104,23 @@ if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 	velocity.y = 0
 };
 
-
 // apply velocity
-x += velocity.x;
-y += velocity.y
+if not dead {
+	x += velocity.x;
+	y += velocity.y
+}
 
 
+
+// EVERYTHING THAT IS NOT COLLISIONS RELATED
+
+
+
+depth = -infinity
+
+// respawn
+if y > room_height+1000 {
+	dead = true
+	x = global.spawn_point.x
+	y = global.spawn_point.y
+}
