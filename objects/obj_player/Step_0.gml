@@ -1,27 +1,12 @@
 // THE ORDER AT WICH COLLISIONS ARE CHECKED IS IMPORTANT
 // make sure to know what you're doing before modifying it
 
-
-// moving platform floor collision 
-var _movingPlatform_f = instance_place(x, y+velocity.y+2, obj_moving_platform)
-
 // tilemap floor collision
 if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 	////print("floor collision")
 	velocity.y = 0
 	can_jump = true
 }
-
-else if (_movingPlatform_f && bbox_bottom <= _movingPlatform_f.bbox_top) {
-	show_debug_message("On moving platform")
-	velocity.y = 0
-	can_jump = true
-	x += sign(cos(_movingPlatform_f.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
-	y += sign(-sin(_movingPlatform_f.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
-	print(x)
-	print(y)
-}
-
 // freefall
 else {
 	////print("freefall")
@@ -31,7 +16,17 @@ else {
 
 
 // x velocity, for now only affected by keyboard inputs
-velocity.x = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed; 
+input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
+velocity.x = input_vx
+
+// moving platform floor collision 
+var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
+
+if (_movingPlatform != noone) {
+	velocity.x = _movingPlatform.velocity.x + input_vx;
+	velocity.y = _movingPlatform.velocity.y;
+	can_jump = true
+}
 
 // right wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
@@ -39,6 +34,7 @@ if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
 	//making it impossible to move further right instead of locking th player in place
 	velocity.x = -keyboard_check(global.keybinds.left)*_speed; 
 };
+
 //left wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
 	////print("left wall")
@@ -99,7 +95,7 @@ if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 
 
 // apply velocity
-x += velocity.x div 1;
-y += velocity.y div 1
+x += velocity.x;
+y += velocity.y
 
 

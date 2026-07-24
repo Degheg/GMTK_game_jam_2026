@@ -5,5 +5,7 @@ global.player.velocity = velocity;
 
 
 //print("Switching reality");
+if not deactivate_reality_switch {
 global.room_id[1] = not global.room_id[1]; //switching reality
+}
 
