@@ -35,3 +35,8 @@ global.rooms[# 1, false] = rm_testroom_down
 global.rooms[# 1, true] = rm_testroom_up
 
 audio_play_sound(prototype1, 1, true, 100)
+
+//global clock
+global.t_min = 2
+global.t_sec = 0
+global.t_mil = 0
