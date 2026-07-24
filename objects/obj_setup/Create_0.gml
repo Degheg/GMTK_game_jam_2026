@@ -1,3 +1,5 @@
+audio_play_sound(snd_neon_sewers, 1, true, 100)
+
 //keybinds
 global.keybinds =
 {
@@ -25,14 +27,19 @@ global.player =
 }
 
 //positions of moving platforms to keep track of when changing reality
-global.moving_platforms =
-{
+global.moving_platforms = {}
 
-}
+// camera setup
+global.Camera = camera_create_view(0, 0, 1280, 720);
+
 
 // time for reality shift
 global.shift_time = 5
 
+//global clock
+global.t_min = 2
+global.t_sec = 0
+global.t_mil = 0
 
 //room_id[0] is for the level (not sure we're gonna make more than one level tho
 //room_id[1] is for wich reality we are in
@@ -45,13 +52,6 @@ global.rooms = ds_grid_create(2, 3) //total number of levels
 global.rooms[# 0, false] = rm_setup
 global.rooms[# 1, false] = rm_testroom_down
 global.rooms[# 1, true] = rm_testroom_up
-
-audio_play_sound(prototype1, 1, true, 100)
-
-//global clock
-global.t_min = 2
-global.t_sec = 0
-global.t_mil = 0
 
 //dev tools
 global.deactivate_reality_switch = false

@@ -10,7 +10,3 @@ if array_contains(struct_get_names(global.moving_platforms), string(id)) {
 }
 
 velocity = {x:0, y:0}
-
-
-
-
