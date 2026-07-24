@@ -22,6 +22,11 @@ global.moving_platforms =
 
 }
 
+// time for reality shift
+
+global.shift_time = 5
+
+
 //room_id[0] is for the level (not sure we're gonna make more than one level tho
 //room_id[1] is for wich reality we are in
 //false is the sewers, true is the cyberpunk city
