@@ -45,3 +45,6 @@ audio_play_sound(prototype1, 1, true, 100)
 global.t_min = 2
 global.t_sec = 0
 global.t_mil = 0
+
+//dev tools
+global.deactivate_reality_switch = false

@@ -20,13 +20,32 @@ input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.ke
 velocity.x = input_vx
 
 // moving platform floor collision 
-var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
+var _movingPlatform = instance_place(x, y+velocity.x, obj_moving_platform)
 
 if (_movingPlatform != noone) {
-	velocity.x = _movingPlatform.velocity.x + input_vx;
-	velocity.y = _movingPlatform.velocity.y;
-	can_jump = true
+	if y < _movingPlatform.y+15 {
+		velocity.x = _movingPlatform.velocity.x + input_vx;
+		velocity.y = _movingPlatform.velocity.y;
+		can_jump = true
+	}
+	else {
+		//platform under grabbing
+		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 20) {
+			can_jump = true;
+			var current_platform = _movingPlatform;
+			x = current_platform.x;
+			y = current_platform.y + 35;
+			velocity.x = _movingPlatform.velocity.x;
+			velocity.y = _movingPlatform.velocity.y
+		}
+		else {
+			velocity.y = 6
+		}
+	}
 }
+else {
+	can_grab_platform = true
+};
 
 // right wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
@@ -53,8 +72,6 @@ if place_meeting(x, y, obj_ladder) {
 		velocity.x = 0
 	};
 	
-	print(can_grab_ladder);
-	
 	//moving on the ladder
 	if keyboard_check(global.keybinds.up)
 		velocity.y = -player_cons.ladder_speed
@@ -74,6 +91,10 @@ if keyboard_check_pressed(global.keybinds.jump){
 		if place_meeting(x, y, obj_ladder) {
 			can_grab_ladder = false
 		}
+		if (_movingPlatform != noone) and (y >= _movingPlatform.y) {
+			can_grab_platform = false
+			velocity.y = 6
+		}
 	}
 
 };
@@ -82,16 +103,6 @@ if keyboard_check_pressed(global.keybinds.jump){
 if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 	velocity.y = 0
 };
-
-//moving platform ceiling collision
-//var _movingPlatform_c = instance_place(x, y-33, obj_moving_platform)
-//if (_movingPlatform_c && bbox_top <= _movingPlatform_c.bbox_bottom) {
-//	show_debug_message("Below moving platform")
-//	velocity.y = 0
-//	can_jump = false
-//	x += sign(cos(_movingPlatform_c.image_index*2*pi/8))*obj_moving_platform.platform_const.speed
-//	y = _movingPlatform_c.bbox_bottom + 31
-//}
 
 
 // apply velocity

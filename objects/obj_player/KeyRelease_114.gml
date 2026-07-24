@@ -1,1 +1,1 @@
-deactivate_reality_switch = not deactivate_reality_switch
+global.deactivate_reality_switch = not global.deactivate_reality_switch

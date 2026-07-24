@@ -12,7 +12,7 @@ x = global.player.x
 y = global.player.y
 can_jump = true
 can_grab_ladder = true
-deactivate_reality_switch = false
+can_grab_platform = true
 
 // level shift based on global.shift_time
 alarm[0] = global.shift_time*game_get_speed(gamespeed_fps);
