@@ -15,6 +15,13 @@ y = global.player.y
 can_grab_ladder = true
 can_grab_platform = true
 global.dead = false
+image_xscale = 1
+image_yscale = 1
+image_speed = 1
+image_direction = 1
+image_frame = 0
+action = "idle" 
+
 
 // reality shift based on global.shift_time
 alarm[0] = global.shift_time*game_get_speed(gamespeed_fps);
