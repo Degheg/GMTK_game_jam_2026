@@ -8,6 +8,7 @@ global.keybinds =
 	up: 87,
 	down: 83,
 	jump: 32,
+	sprint: 160,
 	interact: 69
 }
 

@@ -17,11 +17,19 @@ else {
 
 // x velocity, for now only affected by keyboard inputs
 input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
-
+sprint_coeff = keyboard_check(global.keybinds.sprint)+1
 if not global.dead {
-	velocity.x = input_vx
-	if input_vx != 0 
+	velocity.x = sprint_coeff*input_vx
+	if input_vx != 0 { 
 		image_direction = 1*sign(velocity.x)
+		if sprint_coeff > 1 {
+			action = "run"	
+		} else {
+			action = "walk"
+		}
+	} else {
+		action = "idle"
+	}
 } else { // makes it so input doesn't do anything if dead
 	velocity.x = 0
 }

@@ -99,6 +99,7 @@
     {"id":{"name":"spr_tileset_v2_transparent","path":"sprites/spr_tileset_v2_transparent/spr_tileset_v2_transparent.yy",},},
     {"id":{"name":"spr_tileset_v2","path":"sprites/spr_tileset_v2/spr_tileset_v2.yy",},},
     {"id":{"name":"spr_towa_idle","path":"sprites/spr_towa_idle/spr_towa_idle.yy",},},
+    {"id":{"name":"spr_towa_run","path":"sprites/spr_towa_run/spr_towa_run.yy",},},
     {"id":{"name":"spr_towa_walk","path":"sprites/spr_towa_walk/spr_towa_walk.yy",},},
     {"id":{"name":"spr_wolf","path":"sprites/spr_wolf/spr_wolf.yy",},},
     {"id":{"name":"ts_test_tileset_transparent","path":"tilesets/ts_test_tileset_transparent/ts_test_tileset_transparent.yy",},},
