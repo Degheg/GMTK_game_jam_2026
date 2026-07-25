@@ -1,6 +1,14 @@
-draw_sprite(spr_towa_walk, image_index, x, y)
 if global.dead {
 	var get_CamX = camera_get_view_border_x(view_camera[0] + (camera_get_view_width(view_camera[0])/2))
 	var get_CamY = camera_get_view_border_y(view_camera[0] + (camera_get_view_height(view_camera[0])/2))
 	draw_sprite_ext(spr_gui_stretch, 0, get_CamX, get_CamY, 2000, 2000, 0, c_red, 0.3);
+} else {
+	if velocity.x != 0 {
+		image_frame += image_speed/5
+		image_frame = image_frame % sprite_get_number(spr_towa_walk)
+		draw_sprite_ext(spr_towa_walk, image_index+image_frame, x, y, image_direction, 1, 0, c_white, 1)
+	} else {
+		draw_sprite_ext(spr_towa_idle, image_index, x, y, image_direction, 1, 0, c_white, 1)
+	}
 }
+

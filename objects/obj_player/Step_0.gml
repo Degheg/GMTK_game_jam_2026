@@ -20,9 +20,8 @@ input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.ke
 
 if not global.dead {
 	velocity.x = input_vx
-	if velocity.x != 0 {
-		image_xscale = 1*sign(velocity.x);
-	}
+	if input_vx != 0 
+		image_direction = 1*sign(velocity.x)
 } else { // makes it so input doesn't do anything if dead
 	velocity.x = 0
 }
@@ -120,7 +119,7 @@ if not (global.dead or global.times_up or instance_exists(obj_settings_menu)) {
 	y += velocity.y
 }
 
-
+draw_self()
 
 
 
