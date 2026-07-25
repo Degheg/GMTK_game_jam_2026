@@ -28,8 +28,11 @@ global.player =
 {
 	x: global.spawn_point.x,
 	y: global.spawn_point.y,
-	velocity: {x:0, y:0}
+	velocity: {x:0, y:0},
+	abilities: {jumps: 1},
+	uabilities: {jumps: 1} //put the same values as abilities
 }
+
 
 //positions of moving platforms to keep track of when changing reality
 global.moving_platforms = {}

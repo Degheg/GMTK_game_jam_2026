@@ -70,6 +70,7 @@
     {"id":{"name":"obj_time_up_control","path":"objects/obj_time_up_control/obj_time_up_control.yy",},},
     {"id":{"name":"PGMLib_object","path":"objects/PGMLib_object/PGMLib_object.yy",},},
     {"id":{"name":"test_pgmlib","path":"objects/test_pgmlib/test_pgmlib.yy",},},
+    {"id":{"name":"rm_level1_up","path":"rooms/rm_level1_up/rm_level1_up.yy",},},
     {"id":{"name":"rm_setup","path":"rooms/rm_setup/rm_setup.yy",},},
     {"id":{"name":"rm_testroom_down","path":"rooms/rm_testroom_down/rm_testroom_down.yy",},},
     {"id":{"name":"rm_testroom_up","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},},
@@ -104,6 +105,7 @@
     {"roomId":{"name":"rm_setup","path":"rooms/rm_setup/rm_setup.yy",},},
     {"roomId":{"name":"rm_testroom_up","path":"rooms/rm_testroom_up/rm_testroom_up.yy",},},
     {"roomId":{"name":"rm_testroom_down","path":"rooms/rm_testroom_down/rm_testroom_down.yy",},},
+    {"roomId":{"name":"rm_level1_up","path":"rooms/rm_level1_up/rm_level1_up.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

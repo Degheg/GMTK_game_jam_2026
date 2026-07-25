@@ -12,7 +12,6 @@ _speed = 5
 velocity = global.player.velocity
 x = global.player.x
 y = global.player.y
-can_jump = true
 can_grab_ladder = true
 can_grab_platform = true
 global.dead = false

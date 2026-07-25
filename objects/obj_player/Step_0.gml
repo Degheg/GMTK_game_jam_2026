@@ -5,14 +5,13 @@
 if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 	////print("floor collision")
 	velocity.y = 0
-	can_jump = true
+	global.player.uabilities.jumps = global.player.abilities.jumps
 }
 // freefall
 else {
 	////print("freefall")
 	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
 	velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
-	can_jump = false
 };
 
 
@@ -34,12 +33,12 @@ if (_movingPlatform != noone) {
 	if y < _movingPlatform.y+16 {
 		velocity.x = _movingPlatform.velocity.x + input_vx;
 		velocity.y = _movingPlatform.velocity.y;
-		can_jump = true
+		global.player.uabilities.jumps = global.player.abilities.jumps
 	}
 	else {
 		//platform under grabbing
-		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 20) {
-			can_jump = true;
+		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 30) {
+			global.player.uabilities.jumps = global.player.abilities.jumps;
 			var current_platform = _movingPlatform;
 			x = current_platform.x;
 			y = current_platform.y + 35;
@@ -76,7 +75,7 @@ if place_meeting(x, y, obj_ladder) {
 		//lock the player on the ladder
 		if can_grab_ladder {
 			velocity.y = 0
-			can_jump = true
+			global.player.uabilities.jumps = global.player.abilities.jumps
 			var current_ladder = instance_place(x, y, obj_ladder)
 			x = current_ladder.x + 16
 			velocity.x = 0
@@ -96,9 +95,9 @@ else {
 
 // jump
 if (!global.dead && keyboard_check_pressed(global.keybinds.jump)){
-	if can_jump {
+	if global.player.uabilities.jumps > 0 {
 		velocity.y = -player_cons.jump_height
-		can_jump = false
+		global.player.uabilities.jumps -= 1
 		if place_meeting(x, y, obj_ladder) {
 			can_grab_ladder = false
 		}
@@ -140,3 +139,5 @@ if global.dead {
 	x = global.spawn_point.x
 	y = global.spawn_point.y
 }
+
+print(global.player.uabilities.jumps)

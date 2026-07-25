@@ -19,7 +19,7 @@ settings = box_new(gui_x1+margin, gui_y1+margin, gui_x2-margin-gui_x1, gui_y2-ma
 	ktype_box: box_new(0, 80, 300, 20, 0, [false, false, false, false], [0, 0, 0, 0], [0, 0, 0, 0], {
 		ktype_text: box_new_text("Keyboard type", #ffffff, PGMLib_default_font, 12, 20),
 		ktype_button: box_new(20, 90, 96, 32, 2, [true, true, true, true], [255, 255, 255, 255], [0, 0, 0, 255], {
-			text: box_new_text("UNKNOWN", #ffffff, PGMLib_default_font, 12, 2),
+			text: box_new_text("UNKNOWN", #ffffff, PGMLib_default_font, 12, 10),
 		})
 	})
 })
