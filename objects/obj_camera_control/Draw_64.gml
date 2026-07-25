@@ -1,7 +1,7 @@
 // draw global timer
 
 draw_set_colour(c_white)
-draw_set_font(ACES07)
+draw_set_font(ft_aces07)
 
 
 var t = ""
