@@ -7,15 +7,21 @@ if global.dead {
 	case "walk" :
 		image_frame += image_speed/5
 		image_frame = image_frame % sprite_get_number(spr_towa_walk)
-		draw_sprite_ext(spr_towa_walk, image_index+image_frame, x, y, image_direction, 1, 0, c_white, 1)
+		draw_sprite_ext(spr_towa_walk, image_index+image_frame, x, y, global.player.image_direction, 1, 0, c_white, 1)
 	break
 	case "run" :
 		image_frame += image_speed/5
 		image_frame = image_frame % sprite_get_number(spr_towa_run)
-		draw_sprite_ext(spr_towa_run, image_index+image_frame, x, y, image_direction, 1, 0, c_white, 1)
+		draw_sprite_ext(spr_towa_run, image_index+image_frame, x, y, global.player.image_direction, 1, 0, c_white, 1)
+	break
+	case "running jump":
+	draw_sprite_ext(spr_towa_run_jump, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1)
+	break
+	case "running boost jump":
+	draw_sprite_ext(spr_towa_run_boost_jump, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1)
 	break
 	case "idle" :
-		draw_sprite_ext(spr_towa_idle, image_index, x, y, image_direction, 1, 0, c_white, 1)
+		draw_sprite_ext(spr_towa_idle, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1)
 	break
 	}
 }

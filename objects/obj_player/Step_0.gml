@@ -11,24 +11,43 @@ if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 else {
 	////print("freefall")
 	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
-	velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
+	//velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
 };
 
 
 // x velocity, for now only affected by keyboard inputs
 input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
-sprint_coeff = keyboard_check(global.keybinds.sprint)+1
+sprint_coeff = keyboard_check(global.keybinds.sprint)*1.5+1
 if not global.dead {
-	velocity.x = sprint_coeff*input_vx
 	if input_vx != 0 { 
-		image_direction = 1*sign(velocity.x)
-		if sprint_coeff > 1 {
-			action = "run"	
-		} else {
+		global.player.image_direction = 1*sign(input_vx)
+		velocity.x = sign(input_vx)*min(abs(velocity.x + 0.4*sign(input_vx)), abs(sprint_coeff*input_vx))
+		if (abs(velocity.x) > _speed) { 
+			velocity.x = sign(input_vx)*min(abs(velocity.x - 0.2*sign(input_vx)), abs(sprint_coeff*input_vx))
+			if (keyboard_check(global.keybinds.jump)){
+				if (global.player.uabilities.jumps == 2)//first jump
+					action = "running jump"
+				else
+					action = "running boost jump" //jumping additional times after first jump
+			} else {
+				action = "run"
+			}
+		} else { 
 			action = "walk"
 		}
 	} else {
-		action = "idle"
+		if (velocity.x != 0) {
+			show_debug_message("Finger off key, bleeding momentum")
+			if (abs(velocity.x) > _speed) {
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.1, 0)
+				action = "run"
+			} else {
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.4, 0)
+				action = "walk"
+			}
+		} else {
+			action = "idle"
+		}
 	}
 } else { // makes it so input doesn't do anything if dead
 	velocity.x = 0
@@ -126,8 +145,6 @@ if not (global.dead or global.times_up or instance_exists(obj_settings_menu)) {
 	x += velocity.x;
 	y += velocity.y
 }
-
-draw_self()
 
 
 
