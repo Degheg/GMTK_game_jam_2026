@@ -17,7 +17,12 @@ else {
 
 // x velocity, for now only affected by keyboard inputs
 input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
-velocity.x = input_vx
+
+// makes it so input doesn't do anything if dead
+if not global.dead
+	velocity.x = input_vx
+else
+	min(max(0, velocity.x-0.5), velocity.x-0.5)
 
 // moving platform floor collision 
 var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
@@ -63,20 +68,23 @@ if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
 
 // ladder climbing
 if place_meeting(x, y, obj_ladder) {	
-	//lock the player on the ladder
-	if can_grab_ladder {
-		velocity.y = 0
-		can_jump = true
-		var current_ladder = instance_place(x, y, obj_ladder)
-		x = current_ladder.x + 16
-		velocity.x = 0
-	};
+	// check if player is dead, if so they just fall off
+	if not global.dead {
+		//lock the player on the ladder
+		if can_grab_ladder {
+			velocity.y = 0
+			can_jump = true
+			var current_ladder = instance_place(x, y, obj_ladder)
+			x = current_ladder.x + 16
+			velocity.x = 0
+		};
 	
-	//moving on the ladder
-	if keyboard_check(global.keybinds.up)
-		velocity.y = -player_cons.ladder_speed
-	else if keyboard_check(global.keybinds.down) {
-		velocity.y = player_cons.ladder_speed
+		//moving on the ladder
+		if keyboard_check(global.keybinds.up)
+			velocity.y = -player_cons.ladder_speed
+		else if keyboard_check(global.keybinds.down) {
+			velocity.y = player_cons.ladder_speed
+		}
 	}
 }
 else {
@@ -84,7 +92,7 @@ else {
 };
 
 // jump
-if keyboard_check_pressed(global.keybinds.jump){
+if (!global.dead && keyboard_check_pressed(global.keybinds.jump)){
 	if can_jump {
 		velocity.y = -player_cons.jump_height
 		can_jump = false
@@ -105,10 +113,9 @@ if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 };
 
 // apply velocity
-if not dead {
-	x += velocity.x;
-	y += velocity.y
-}
+x += velocity.x;
+y += velocity.y
+
 
 
 
@@ -118,9 +125,10 @@ if not dead {
 
 depth = -infinity
 
-// respawn
-if y > room_height+1000 {
-	dead = true
-	x = global.spawn_point.x
-	y = global.spawn_point.y
+// death
+
+if global.dead {
+	//death effect
+	
+	instance_create_depth(mouse_x, mouse_y, -200, obj_death_effect)	
 }

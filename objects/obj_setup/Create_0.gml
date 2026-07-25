@@ -1,4 +1,4 @@
-audio_play_sound(snd_neon_sewers, 1, true, 100)
+audio_play_sound(snd_neon_sewers, 1, true, 1)
 
 //keybinds
 global.keybinds =
@@ -37,8 +37,8 @@ global.Camera = camera_create_view(0, 0, 1280, 720);
 global.shift_time = 5
 
 //global clock
-global.t_min = 2
-global.t_sec = 0
+global.t_min = 0
+global.t_sec = 20
 global.t_mil = 0
 
 //room_id[0] is for the level (not sure we're gonna make more than one level tho
@@ -55,3 +55,4 @@ global.rooms[# 1, true] = rm_testroom_up
 
 //dev tools
 global.deactivate_reality_switch = false
+

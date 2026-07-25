@@ -38,7 +38,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"GMTK_game_jam_2026",
   "resources":[
@@ -47,6 +47,7 @@
     {"id":{"name":"credits","path":"notes/credits/credits.yy",},},
     {"id":{"name":"obj_active","path":"objects/obj_active/obj_active.yy",},},
     {"id":{"name":"obj_camera_control","path":"objects/obj_camera_control/obj_camera_control.yy",},},
+    {"id":{"name":"obj_death_effect","path":"objects/obj_death_effect/obj_death_effect.yy",},},
     {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},},
     {"id":{"name":"obj_layerControl","path":"objects/obj_layerControl/obj_layerControl.yy",},},
     {"id":{"name":"obj_lever","path":"objects/obj_lever/obj_lever.yy",},},
@@ -76,6 +77,7 @@
     {"id":{"name":"snd_neon_sewers","path":"sounds/snd_neon_sewers/snd_neon_sewers.yy",},},
     {"id":{"name":"snd_switch_placeholder","path":"sounds/snd_switch_placeholder/snd_switch_placeholder.yy",},},
     {"id":{"name":"PGMLib_sprite","path":"sprites/PGMLib_sprite/PGMLib_sprite.yy",},},
+    {"id":{"name":"spr_Gui_Stretch","path":"sprites/spr_Gui_Stretch/spr_Gui_Stretch.yy",},},
     {"id":{"name":"spr_ladder_cmask","path":"sprites/spr_ladder_cmask/spr_ladder_cmask.yy",},},
     {"id":{"name":"spr_ladder","path":"sprites/spr_ladder/spr_ladder.yy",},},
     {"id":{"name":"spr_lever","path":"sprites/spr_lever/spr_lever.yy",},},
@@ -86,6 +88,7 @@
     {"id":{"name":"spr_settings_button","path":"sprites/spr_settings_button/spr_settings_button.yy",},},
     {"id":{"name":"spr_test_tileset_transparent","path":"sprites/spr_test_tileset_transparent/spr_test_tileset_transparent.yy",},},
     {"id":{"name":"spr_test_tileset","path":"sprites/spr_test_tileset/spr_test_tileset.yy",},},
+    {"id":{"name":"spr_wolf_dead","path":"sprites/spr_wolf_dead/spr_wolf_dead.yy",},},
     {"id":{"name":"spr_wolf","path":"sprites/spr_wolf/spr_wolf.yy",},},
     {"id":{"name":"ts_test_tileset_transparent","path":"tilesets/ts_test_tileset_transparent/ts_test_tileset_transparent.yy",},},
     {"id":{"name":"ts_test_tileset","path":"tilesets/ts_test_tileset/ts_test_tileset.yy",},},

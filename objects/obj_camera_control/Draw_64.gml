@@ -21,5 +21,7 @@ draw_text(gui_center_h, 5, t)
 
 var t_shift = ""
 t_shift += string(t_shift_sec) + "." + string(t_shift_mil)
-
-draw_text(gui_center_h, gui_center_v, t_shift)
+if not global.dead
+	draw_text(gui_center_h, gui_center_v, t_shift)
+else
+	draw_text(gui_center_h, gui_center_v, "Time's up!")
