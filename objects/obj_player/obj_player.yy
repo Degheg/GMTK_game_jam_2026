@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Towa_idle",
-    "path":"sprites/spr_Towa_idle/spr_Towa_idle.yy",
+    "name":"spr_towa_idle",
+    "path":"sprites/spr_towa_idle/spr_towa_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
