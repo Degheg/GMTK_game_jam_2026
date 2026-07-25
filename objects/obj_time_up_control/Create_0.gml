@@ -12,5 +12,5 @@ alarm[0] = 20; //death delay
 alarm[1] = 3.7*game_get_speed(gamespeed_fps)
 
 audio_stop_sound(snd_neon_sewers)
-audio_play_sound(snd_death, 1, false, global.gain)
+audio_play_sound(snd_death, 1, false, global.audio.gain)
 

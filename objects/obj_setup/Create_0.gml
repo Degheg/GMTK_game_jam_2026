@@ -1,4 +1,3 @@
-audio_play_sound(snd_neon_sewers, 1, true, 1)
 instance_create_layer(0, 0, layer, obj_open_settings)
 
 //keybinds
@@ -12,7 +11,12 @@ global.keybinds =
 	interact: 69
 }
 
-//
+global.audio = {
+	main_theme: audio_play_sound(snd_neon_sewers, 1, true, 1),
+	gain: 1
+}
+
+// player spawn/respawn point
 global.spawn_point =
 {
 	x: 1350,
@@ -32,9 +36,6 @@ global.moving_platforms = {}
 
 // camera setup
 global.Camera = camera_create_view(0, 0, 1280, 720);
-
-// master volume
-global.gain = 100
 
 // time for reality shift
 global.shift_time = 5
