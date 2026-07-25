@@ -1,0 +1,9 @@
+On level 1 :
+industrial :
+	put a spawpoint lever at 4192, 672
+	put a ladder a x: 4512 on the side of the pillar
+	put spikes all around the platform at 5778, 1011
+	add a 2,13 tile at 5920, 1568 on bg_tiles
+	
+cyberpunk :
+	put spikes all aroud the platforms besides the one at 5778, 1011

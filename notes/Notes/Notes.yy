@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Notes",
+  "name":"Notes",
+  "parent":{
+    "name":"GMTK_game_jam_2026",
+    "path":"GMTK_game_jam_2026.yyp",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
