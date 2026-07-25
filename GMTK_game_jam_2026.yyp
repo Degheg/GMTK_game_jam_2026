@@ -17,8 +17,9 @@
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/assets/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"active_props","folderPath":"folders/assets/sprites/active_props.yy","name":"active_props","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"creatures","folderPath":"folders/assets/sprites/creatures.yy","name":"creatures","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"tilesets","folderPath":"folders/assets/sprites/tilesets.yy","name":"tilesets","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"player","folderPath":"folders/assets/sprites/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"gui","folderPath":"folders/assets/sprites/gui.yy","name":"gui","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"tilesets","folderPath":"folders/assets/sprites/tilesets.yy","name":"tilesets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"libraries","folderPath":"folders/libraries.yy","name":"libraries","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"DepthEngine","folderPath":"folders/libraries/DepthEngine.yy","name":"DepthEngine","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"control","folderPath":"folders/libraries/DepthEngine/control.yy","name":"control","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -42,7 +43,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"GMTK_game_jam_2026",
   "resources":[
@@ -97,6 +98,8 @@
     {"id":{"name":"spr_test_tileset","path":"sprites/spr_test_tileset/spr_test_tileset.yy",},},
     {"id":{"name":"spr_tileset_v2_transparent","path":"sprites/spr_tileset_v2_transparent/spr_tileset_v2_transparent.yy",},},
     {"id":{"name":"spr_tileset_v2","path":"sprites/spr_tileset_v2/spr_tileset_v2.yy",},},
+    {"id":{"name":"spr_Towa_idle","path":"sprites/spr_Towa_idle/spr_Towa_idle.yy",},},
+    {"id":{"name":"spr_Towa_walk","path":"sprites/spr_Towa_walk/spr_Towa_walk.yy",},},
     {"id":{"name":"spr_wolf","path":"sprites/spr_wolf/spr_wolf.yy",},},
     {"id":{"name":"ts_test_tileset_transparent","path":"tilesets/ts_test_tileset_transparent/ts_test_tileset_transparent.yy",},},
     {"id":{"name":"ts_test_tileset","path":"tilesets/ts_test_tileset/ts_test_tileset.yy",},},

@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_wolf",
-    "path":"sprites/spr_wolf/spr_wolf.yy",
+    "name":"spr_Towa_idle",
+    "path":"sprites/spr_Towa_idle/spr_Towa_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
