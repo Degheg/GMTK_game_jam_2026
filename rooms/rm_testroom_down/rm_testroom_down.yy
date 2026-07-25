@@ -94,7 +94,7 @@
           -2147483648,2,1,0,-7,-2147483648,1,0,-53,-2147483648,-4,1,-5,-2147483648,2,0,-2147483648,-4,1,1,0,-47,
           -2147483648,2,1,0,-7,-2147483648,2,0,-2147483648,-4,1,1,0,-47,-2147483648,1,1,-8,-2147483648,2,0,-2147483648,
           -4,1,1,0,-47,-2147483648,1,1,-5,-2147483648,-5,1,-52,-2147483648,1,0,-8,-2147483648,1,1,-53,-2147483648,
-          1,0,-8,-2147483648,2,1,-2147483648,-62,1,-64,-2147483648,
+          1,0,-8,-2147483648,2,1,-2147483648,-3,0,-59,1,-64,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_test_tileset","path":"tilesets/ts_test_tileset/ts_test_tileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4283588176,"depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

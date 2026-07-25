@@ -115,24 +115,27 @@ if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 };
 
 // apply velocity
-x += velocity.x;
-y += velocity.y
+if not (global.dead or global.times_up or instance_exists(obj_settings_menu)) {
+	x += velocity.x;
+	y += velocity.y
+}
+
 
 
 
 
 // EVERYTHING THAT IS NOT COLLISIONS RELATED
 
-
-
+// player on the foreground
 depth = -infinity
 
-// death
+// death by falling in the void
+if y > room_height+1000 {
+	global.dead = true
+}
 
+// respawn
 if global.dead {
-	//death effect
-	image_index = spr_wolf_dead
-	instance_create_depth(mouse_x, mouse_y, -200, obj_death_effect)	
-} else {
-	image_index = spr_wolf
+	x = global.spawn_point.x
+	y = global.spawn_point.y
 }

@@ -9,5 +9,5 @@ if keyboard_check_pressed(global.keybinds.interact) and place_meeting(x, y, obj_
 		position = true
 		image_index = 1
 	}}
-	audio_play_sound(snd_lever_interact, 1, false, 80)
+	audio_play_sound(snd_lever_interact, 1, false, 100)
 }

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_lever_interact",
+  "%Name":"snd_death",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":4.527891,
+  "duration":8.333061,
   "exportDir":"",
-  "name":"snd_lever_interact",
+  "name":"snd_death",
   "parent":{
     "name":"sounds",
     "path":"folders/assets/sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_lever_interact.mp3",
-  "volume":0.002,
+  "soundFile":"snd_death.mp3",
+  "volume":0.005,
 }

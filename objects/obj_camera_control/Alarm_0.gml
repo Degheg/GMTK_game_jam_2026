@@ -1,5 +1,3 @@
-
-
 if !(global.t_sec = 0 && global.t_min = 0 && global.t_mil = 0) {
 	global.t_mil -= 1
 
@@ -16,5 +14,7 @@ if !(global.t_sec = 0 && global.t_min = 0 && global.t_mil = 0) {
 } else {
 	show_debug_message("Time's up!")
 	// game over event
-	global.dead = true
+	global.times_up = true
+	obj_player.image_index = spr_wolf_dead
+	instance_create_depth(mouse_x, mouse_y, -200, obj_time_up_control)
 }

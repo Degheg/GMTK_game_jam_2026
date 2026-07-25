@@ -1,8 +1,16 @@
-gui_x1 = display_get_gui_width() - camera_get_view_width(global.Camera);
-gui_y1 = display_get_gui_height() - camera_get_view_height(global.Camera);
+gui_x1 = camera_get_view_x(global.Camera);
+gui_y1 = camera_get_view_y(global.Camera);
 
-gui_x2 = display_get_gui_width() - 50;
-gui_y2 = display_get_gui_height() - 50;
+gui_x2 = camera_get_view_x(global.Camera) + camera_get_view_width(global.Camera) - 50;
+gui_y2 = camera_get_view_y(global.Camera) + camera_get_view_height(global.Camera) - 50;
 
-big_box_margin = 40
-big_box = box_new(big_box_margin, big_box_margin+640, gui_x2-big_box_margin, gui_y2-big_box_margin)
+cam_size = camera_get_view_height(global.Camera)
+
+margin = 40
+menu = box_new(gui_x1+margin, gui_y1+margin+cam_size, gui_x2-margin-gui_x1, gui_y2-margin-gui_y1, 5, [true, true, true, true], [255, 255, 255, 255], [0, 0, 0, 255], {})
+settings = box_new(gui_x1+margin, gui_y1+margin, gui_x2-margin-gui_x1, gui_y2-margin-gui_y1, 5, [true, true, true, true], [255, 255, 255, 255], [0, 0, 0, 255], {
+	gain_text: box_new_text("Master volume", #ffffff, PGMLib_default_font, 12, 20),
+	gain_slider_box: box_new(20, 60, 300, 20, 0, [false, false, false, false], [0, 0, 0, 0], [0, 0, 0, 0], {
+		gain_slider: box_new_slider(200, 100, c_red, set_game_gain)
+	})
+})

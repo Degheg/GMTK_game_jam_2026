@@ -1,4 +1,5 @@
 audio_play_sound(snd_neon_sewers, 1, true, 1)
+instance_create_layer(0, 0, layer, obj_open_settings)
 
 //keybinds
 global.keybinds =
@@ -32,14 +33,19 @@ global.moving_platforms = {}
 // camera setup
 global.Camera = camera_create_view(0, 0, 1280, 720);
 
+// master volume
+global.gain = 100
 
 // time for reality shift
 global.shift_time = 5
 
 //global clock
-global.t_min = 0
+global.t_min = 2
 global.t_sec = 20
 global.t_mil = 0
+
+//
+global.times_up = false
 
 //room_id[0] is for the level (not sure we're gonna make more than one level tho
 //room_id[1] is for wich reality we are in

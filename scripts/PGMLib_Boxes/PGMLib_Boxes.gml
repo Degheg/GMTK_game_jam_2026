@@ -535,11 +535,11 @@ function box_draw_text(text, offset_x, offset_y, parent_length) {
 function box_draw_slider(slider, offset_x=0, offset_y=0) {
 	if not box_is_slider(slider) {show_error("slider must be a PGMLib slider struct", true)}
 	else {
-		if not slider.slider_inst.setup {
+		if not slider.slider_inst.slider_setup {
 			slider.slider_inst.x = offset_x+slider.position;
 			slider.slider_inst.y = offset_y;
 			slider.slider_inst.sx = offset_x;
-			slider.slider_inst.setup = true
+			slider.slider_inst.slider_setup = true
 		};
 		
 		draw_line_width_colour(

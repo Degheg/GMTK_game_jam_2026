@@ -1,5 +1,5 @@
-if not global.dead 
-	t_shift_mil -= 1
+if not global.times_up { 
+	t_shift_mil -= 1}
 
 if t_shift_mil = -1 {
 	t_shift_mil = 9
