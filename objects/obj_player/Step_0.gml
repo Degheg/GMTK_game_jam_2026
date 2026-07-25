@@ -18,12 +18,14 @@ else {
 // x velocity, for now only affected by keyboard inputs
 input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
 
-// makes it so input doesn't do anything if dead
-if not global.dead
+if not global.dead {
 	velocity.x = input_vx
-else
-	min(max(0, velocity.x-0.5), velocity.x-0.5)
-
+	if velocity.x != 0 {
+		image_xscale = 1*sign(velocity.x);
+	}
+} else { // makes it so input doesn't do anything if dead
+	velocity.x = 0
+}
 // moving platform floor collision 
 var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
 
@@ -129,6 +131,8 @@ depth = -infinity
 
 if global.dead {
 	//death effect
-	
+	image_index = spr_wolf_dead
 	instance_create_depth(mouse_x, mouse_y, -200, obj_death_effect)	
+} else {
+	image_index = spr_wolf
 }
