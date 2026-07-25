@@ -12,6 +12,7 @@ else {
 	////print("freefall")
 	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
 	velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
+	can_jump = false
 };
 
 

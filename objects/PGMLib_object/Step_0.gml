@@ -1,5 +1,5 @@
 if role == "obj_slider" {
-	if mouse_check_button_released(mb_left) {
+	if mouse_check_button_released(mb_left) and follow{
 		follow = false
 		method_call(box.call, [box.position])
 	}

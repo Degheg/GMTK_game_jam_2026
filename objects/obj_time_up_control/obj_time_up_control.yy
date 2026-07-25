@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_wolf_dead",
-    "path":"sprites/spr_wolf_dead/spr_wolf_dead.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

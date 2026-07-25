@@ -1,4 +1,4 @@
-PGMLib_version = "0.3.0"
+PGMLib_version = "0.3.0 tweaked for the project"
 Credits = "C Degheg, struct_copy inspired by 31Nf4ChZ4H73N"
 
 /// @desc If you want to do nothing, call this function

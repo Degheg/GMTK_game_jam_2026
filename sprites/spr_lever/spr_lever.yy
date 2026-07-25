@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"sprites",
-    "path":"folders/assets/sprites.yy",
+    "name":"active_props",
+    "path":"folders/assets/sprites/active_props.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

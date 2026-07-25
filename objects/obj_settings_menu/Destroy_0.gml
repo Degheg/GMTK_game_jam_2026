@@ -1,1 +1,2 @@
 instance_destroy(menu.content.gain_slider_box.content.gain_slider.slider_inst)
+instance_destroy(setkbinds_obj)
