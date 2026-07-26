@@ -1,7 +1,7 @@
 var mp = variable_struct_get_names(global.moving_platforms)
 for (var i=0; i<len(mp); i++) {
 	infos = variable_struct_get(global.moving_platforms, mp[i])
-	if infos[3]
+	if infos[4]
 	{
 		instance_create_layer
 		(
@@ -9,7 +9,7 @@ for (var i=0; i<len(mp); i++) {
 		infos[1],
 		layer_get_id("Instances_tracker"),
 		obj_moving_platform_tracker,
-		{image_index: infos[2], platform_id: mp[i]}
+		{image_index: infos[2], platform_id: mp[i], active: infos[3]}
 		)
 	}
 }

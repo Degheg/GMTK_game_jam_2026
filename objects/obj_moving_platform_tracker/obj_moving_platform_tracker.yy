@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_moving_platform_up",
-    "path":"sprites/spr_moving_platform_up/spr_moving_platform_up.yy",
+    "name":"spr_moving_platform_down",
+    "path":"sprites/spr_moving_platform_down/spr_moving_platform_down.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,3 +1,3 @@
-if mouse_on(id) {
-	print(id)
-}
+//if mouse_on(id) {
+//	print(id)
+//}

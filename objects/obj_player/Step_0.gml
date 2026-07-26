@@ -61,7 +61,6 @@ var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
 
 if (_movingPlatform != noone) {
 	if y < _movingPlatform.y+16 {
-		show_debug_message("Standing on Platform")
 		velocity.x = _movingPlatform.velocity.x + input_vx;
 		velocity.y = _movingPlatform.velocity.y;
 		global.player.uabilities.jump.number = global.player.abilities.jumps
@@ -69,14 +68,12 @@ if (_movingPlatform != noone) {
 	else {
 		//platform under grabbing
 		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 60) {
-			show_debug_message("Can Grab")
 			grabable = true
 			if keyboard_check(global.keybinds.interact) {
 				grabable = false
 				global.player.grabbing = true
 			}
 			if global.player.grabbing == true {
-				show_debug_message("Grabbing")
 				global.player.uabilities.jump.number = global.player.abilities.jumps;
 				var current_platform = _movingPlatform;
 				x = current_platform.x;
@@ -210,8 +207,5 @@ if stun {
 
 // dead, waiting for respawn
 if global.dead {
-	show_debug_message("dead")
 	action = ACTION.DEAD
 }
-
-show_debug_message(global.dead)

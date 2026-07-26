@@ -46,4 +46,3 @@ hurt_frames = false
 
 // reality shift based on global.shift_time
 alarm[0] = global.shift_time*game_get_speed(gamespeed_fps);
-
