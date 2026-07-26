@@ -26,17 +26,17 @@ if not global.dead {
 			velocity.x = sign(input_vx)*min(abs(velocity.x - 0.2*sign(input_vx)), abs(sprint_coeff*input_vx))
 			if (keyboard_check(global.keybinds.jump)){
 				if (global.player.uabilities.jumps == 2)//first jump
-					action = "running jump"
+					action = ACTION.RUNNING_JUMP
 				else
-					action = "running boost jump" //jumping additional times after first jump
+					action = ACTION.RUNNING_BOOST_JUMP //jumping additional times after first jump
 			} else {
-				action = "run"
+				action = ACTION.RUN
 			}
 		} else { 
 			if (keyboard_check(global.keybinds.jump)){
-				action = "walk jump"
+				action = ACTION.WALK_JUMP
 			} else { 
-				action = "walk"
+				action = ACTION.WALK
 			}
 		}
 	} else {
@@ -44,13 +44,13 @@ if not global.dead {
 			show_debug_message("Finger off key, bleeding momentum")
 			if (abs(velocity.x) > _speed) {
 				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.3, 0)
-				action = "run"
+				action = ACTION.RUN
 			} else {
 				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.5, 0)
-				action = "walk"
+				action = ACTION.WALK
 			}
 		} else {
-			action = "idle"
+			action = ACTION.IDLE
 		}
 	}
 } else { // makes it so input doesn't do anything if dead
@@ -75,7 +75,7 @@ if (_movingPlatform != noone) {
 			global.player.grabbing = true;
 			velocity.x = _movingPlatform.velocity.x;
 			velocity.y = _movingPlatform.velocity.y
-			action = "idle"
+			action = ACTION.IDLE
 		}
 		else {
 			global.player.grabbing = false;

@@ -7,6 +7,15 @@ player_cons = {
 	max_hp: global.player.hp
 }
 
+enum ACTION {
+	WALK,
+	WALK_JUMP,
+	RUN,
+	RUNNING_JUMP,
+	RUNNING_BOOST_JUMP,
+	IDLE
+}
+
 hp = global.player.hp
 _speed = 5
 velocity = global.player.velocity
@@ -19,7 +28,7 @@ image_xscale = 1
 image_yscale = 1
 image_speed = 1
 image_frame = 0
-action = "idle" 
+action = ACTION.IDLE
 inv_frames = false
 
 
