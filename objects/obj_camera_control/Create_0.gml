@@ -11,3 +11,4 @@ t_shift_mil = 0
 
 alarm[0] = game_get_speed(gamespeed_fps)/10
 alarm[1] = game_get_speed(gamespeed_fps)/10
+image_frame = 0

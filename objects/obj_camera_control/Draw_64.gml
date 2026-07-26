@@ -29,4 +29,12 @@ if not global.times_up
 else {
 	draw_text(gui_h, gui_v, "Time's up!")}
 	
-draw_sprite_ext(spr_towa_battery, global.player.hp, 50,30, 2, 2, 0, c_white, 1)
+if (global.player.hp > 1) {
+	draw_sprite_ext(spr_towa_battery_new, global.player.hp-1, 50,30, 2, 2, 0, c_white, 1)
+} else if (global.player.hp == 1){
+	image_frame += image_speed/35;
+	image_frame = image_frame % 4;
+	draw_sprite_ext(spr_towa_battery_new_crit, image_frame, 50,30, 2, 2, 0, c_white, 1)
+} else {
+	draw_sprite_ext(spr_towa_battery_new, 0, 50,30, 2, 2, 0, c_white, 1)
+}
