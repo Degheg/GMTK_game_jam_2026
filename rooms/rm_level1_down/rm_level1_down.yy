@@ -59,11 +59,7 @@
     {"name":"inst_5FC90DE3","path":"rooms/rm_level1_down/rm_level1_down.yy",},
     {"name":"inst_71B9A558","path":"rooms/rm_level1_down/rm_level1_down.yy",},
     {"name":"inst_57AF5B61","path":"rooms/rm_level1_down/rm_level1_down.yy",},
-<<<<<<< Updated upstream
-    {"name":"inst_6A320C7F","path":"rooms/rm_level1_down/rm_level1_down.yy",},
-=======
     {"name":"inst_FC3BFB4","path":"rooms/rm_level1_down/rm_level1_down.yy",},
->>>>>>> Stashed changes
   ],
   "isDnd":false,
   "layers":[
