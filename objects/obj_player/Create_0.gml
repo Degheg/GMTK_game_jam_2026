@@ -1,9 +1,11 @@
 player_cons = {
 	max_fall_speed: 16,
 	jump_height: 14,
+	jump_max_timer: 10,
+	jump_timer_height: 7,
 	gravity: 0.8,
 	ladder_speed: 5,
-	level_tilemap: layer_tilemap_get_id("test_tiles"),
+	level_tilemap: layer_tilemap_get_id("active_tilemap"),
 	max_hp: global.player.hp
 }
 

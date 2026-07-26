@@ -3,13 +3,11 @@
 
 // tilemap floor collision
 if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
-	////print("floor collision")
 	velocity.y = 0
-	global.player.uabilities.jumps = global.player.abilities.jumps
+	global.player.uabilities.jump.number = global.player.abilities.jumps
 }
 // freefall
 else {
-	////print("freefall")
 	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
 	//velocity.x = sign(global.player.image_direction)*min(max(0, sign(global.player.image_direction)*velocity.x-0.5), 0)
 };
@@ -25,7 +23,7 @@ if not global.dead {
 		if (abs(velocity.x) > _speed) { 
 			velocity.x = sign(input_vx)*min(abs(velocity.x - 0.2*sign(input_vx)), abs(sprint_coeff*input_vx))
 			if (keyboard_check(global.keybinds.jump)){
-				if (global.player.uabilities.jumps == 2)//first jump
+				if (global.player.uabilities.jump.number == global.player.abilities.jumps)//first jump
 					action = ACTION.RUNNING_JUMP
 				else
 					action = ACTION.RUNNING_BOOST_JUMP //jumping additional times after first jump
@@ -41,7 +39,6 @@ if not global.dead {
 		}
 	} else {
 		if (velocity.x != 0) {
-			show_debug_message("Finger off key, bleeding momentum")
 			if (abs(velocity.x) > _speed) {
 				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.3, 0)
 				action = ACTION.RUN
@@ -63,12 +60,12 @@ if (_movingPlatform != noone) {
 	if y < _movingPlatform.y+16 {
 		velocity.x = _movingPlatform.velocity.x + input_vx;
 		velocity.y = _movingPlatform.velocity.y;
-		global.player.uabilities.jumps = global.player.abilities.jumps
+		global.player.uabilities.jump.number = global.player.abilities.jumps
 	}
 	else {
 		//platform under grabbing
 		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 30) {
-			global.player.uabilities.jumps = global.player.abilities.jumps;
+			global.player.uabilities.jump.number = global.player.abilities.jumps;
 			var current_platform = _movingPlatform;
 			x = current_platform.x;
 			y = current_platform.y + 35;
@@ -90,14 +87,12 @@ else {
 
 // right wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
-	////print("right wall")
 	//making it impossible to move further right instead of locking th player in place
 	velocity.x = -keyboard_check(global.keybinds.left)*_speed; 
 };
 
 //left wall collision
 if place_meeting(x+velocity.x, y-2, player_cons.level_tilemap) {
-	////print("left wall")
 	//making it impossible to move further left instead of locking th player in place
 	velocity.x = keyboard_check(global.keybinds.right)*_speed;
 };
@@ -109,7 +104,7 @@ if place_meeting(x, y, obj_ladder) {
 		//lock the player on the ladder
 		if can_grab_ladder {
 			velocity.y = 0
-			global.player.uabilities.jumps = global.player.abilities.jumps
+			global.player.uabilities.jump.number = global.player.abilities.jumps
 			var current_ladder = instance_place(x, y, obj_ladder)
 			x = current_ladder.x + 16
 			velocity.x = 0
@@ -128,10 +123,18 @@ else {
 };
 
 // jump
-if (!global.dead && keyboard_check_pressed(global.keybinds.jump)){
-	if global.player.uabilities.jumps > 0 {
+if keyboard_check(global.keybinds.jump) {
+	if global.player.uabilities.jump.timer > 0 {
+		global.player.uabilities.jump.timer += 1
+		velocity.y = -player_cons.jump_timer_height
+		if global.player.uabilities.jump.timer > player_cons.jump_max_timer {
+			global.player.uabilities.jump.timer = 0
+		}
+	}
+	else if global.player.uabilities.jump.number > 0 {
 		velocity.y = -player_cons.jump_height
-		global.player.uabilities.jumps -= 1
+		global.player.uabilities.jump.number -= 1
+		global.player.uabilities.jump.timer = 1
 		if place_meeting(x, y, obj_ladder) {
 			can_grab_ladder = false
 		}
@@ -140,8 +143,10 @@ if (!global.dead && keyboard_check_pressed(global.keybinds.jump)){
 			velocity.y = 6
 		}
 	}
-
 };
+if keyboard_check_released(global.keybinds.jump) {
+	global.player.uabilities.jump.timer = 0
+}
 
 //ceiling collision
 if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
@@ -183,5 +188,3 @@ if global.dead {
 	x = global.spawn_point.x
 	y = global.spawn_point.y
 }
-
-print(global.player.uabilities.jumps)

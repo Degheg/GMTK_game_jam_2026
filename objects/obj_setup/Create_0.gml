@@ -20,8 +20,8 @@ global.audio = {
 // player spawn/respawn point
 global.spawn_point =
 {
-	x: 1350,
-	y: 76
+	x: 909,
+	y: 734
 }
 
 //player variables to keep track of when changing reality
@@ -32,8 +32,8 @@ global.player =
 	hp: 3,
 	image_direction: 1, 
 	velocity: {x:0, y:0},
-	abilities: {jumps: 2},
-	uabilities: {jumps: 2}, //put the same values as abilities
+	abilities: {jumps: 1, sprint: false},
+	uabilities: {jump: {number: 1, timer: 0}}, //put the same values as abilities
 	grabbing: false
 }
 
@@ -61,11 +61,13 @@ global.times_up = false
 global.room_id = [0, false]
 
 //room table
-global.rooms = ds_grid_create(2, 3) //total number of levels
+global.rooms = ds_grid_create(3, 2) //total number of levels
 
 global.rooms[# 0, false] = rm_setup
 global.rooms[# 1, false] = rm_testroom_down
 global.rooms[# 1, true] = rm_testroom_up
+global.rooms[# 2, false] = rm_level1_down
+global.rooms[# 2, true] = rm_level1_up
 
 //dev tools
 global.deactivate_reality_switch = false
