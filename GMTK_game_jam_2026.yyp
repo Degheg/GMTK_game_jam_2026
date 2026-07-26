@@ -88,6 +88,7 @@
     {"id":{"name":"snd_lever_interact","path":"sounds/snd_lever_interact/snd_lever_interact.yy",},},
     {"id":{"name":"snd_neon_sewers","path":"sounds/snd_neon_sewers/snd_neon_sewers.yy",},},
     {"id":{"name":"cyberpunk_tile","path":"sprites/cyberpunk_tile/cyberpunk_tile.yy",},},
+    {"id":{"name":"industrial_tile","path":"sprites/industrial_tile/industrial_tile.yy",},},
     {"id":{"name":"PGMLib_sprite","path":"sprites/PGMLib_sprite/PGMLib_sprite.yy",},},
     {"id":{"name":"spr_gui_stretch","path":"sprites/spr_gui_stretch/spr_gui_stretch.yy",},},
     {"id":{"name":"spr_hazard_acid","path":"sprites/spr_hazard_acid/spr_hazard_acid.yy",},},
