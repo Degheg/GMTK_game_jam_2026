@@ -45,7 +45,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"GMTK_game_jam_2026",
   "resources":[
@@ -88,7 +88,7 @@
     {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
     {"id":{"name":"snd_lever_interact","path":"sounds/snd_lever_interact/snd_lever_interact.yy",},},
     {"id":{"name":"snd_neon_sewers","path":"sounds/snd_neon_sewers/snd_neon_sewers.yy",},},
-    {"id":{"name":"bg_down_tempo_1","path":"sprites/bg_down_tempo_1/bg_down_tempo_1.yy",},},
+    {"id":{"name":"bg_down_tempo_2","path":"sprites/bg_down_tempo_2/bg_down_tempo_2.yy",},},
     {"id":{"name":"bg_up_tempo","path":"sprites/bg_up_tempo/bg_up_tempo.yy",},},
     {"id":{"name":"cyberpunk_tile","path":"sprites/cyberpunk_tile/cyberpunk_tile.yy",},},
     {"id":{"name":"industrial_tile","path":"sprites/industrial_tile/industrial_tile.yy",},},
