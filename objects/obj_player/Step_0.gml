@@ -11,7 +11,7 @@ if place_meeting(x, y+velocity.y+2, player_cons.level_tilemap) {
 else {
 	////print("freefall")
 	velocity.y = min(velocity.y+player_cons.gravity, player_cons.max_fall_speed)
-	//velocity.x = min(max(0, velocity.x-0.5), velocity.x-0.5)
+	//velocity.x = sign(global.player.image_direction)*min(max(0, sign(global.player.image_direction)*velocity.x-0.5), 0)
 };
 
 
@@ -33,16 +33,20 @@ if not global.dead {
 				action = "run"
 			}
 		} else { 
-			action = "walk"
+			if (keyboard_check(global.keybinds.jump)){
+				action = "walk jump"
+			} else { 
+				action = "walk"
+			}
 		}
 	} else {
 		if (velocity.x != 0) {
 			show_debug_message("Finger off key, bleeding momentum")
 			if (abs(velocity.x) > _speed) {
-				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.1, 0)
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.3, 0)
 				action = "run"
 			} else {
-				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.4, 0)
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.5, 0)
 				action = "walk"
 			}
 		} else {
@@ -68,15 +72,19 @@ if (_movingPlatform != noone) {
 			var current_platform = _movingPlatform;
 			x = current_platform.x;
 			y = current_platform.y + 35;
+			global.player.grabbing = true;
 			velocity.x = _movingPlatform.velocity.x;
 			velocity.y = _movingPlatform.velocity.y
+			action = "idle"
 		}
 		else {
+			global.player.grabbing = false;
 			velocity.y = 6
 		}
 	}
 }
 else {
+	global.player.grabbing = true;
 	can_grab_platform = true
 };
 
@@ -139,6 +147,18 @@ if (!global.dead && keyboard_check_pressed(global.keybinds.jump)){
 if place_meeting(x, y+velocity.y-2, player_cons.level_tilemap) {
 	velocity.y = 0
 };
+
+//hazard collision
+if place_meeting(x, y, obj_hazard) || place_meeting(x, y, obj_floor_hazard) {
+	if not global.dead && !inv_frames {
+		global.player.hp -= 1
+		inv_frames = true
+		alarm[1] = 100
+		if (global.player.hp == 0) {
+			global.dead = true
+		}
+	}
+}
 
 // apply velocity
 if not (global.dead or global.times_up or instance_exists(obj_settings_menu)) {

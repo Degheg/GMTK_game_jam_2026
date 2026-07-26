@@ -29,10 +29,12 @@ global.player =
 {
 	x: global.spawn_point.x,
 	y: global.spawn_point.y,
+	hp: 3,
 	image_direction: 1, 
 	velocity: {x:0, y:0},
 	abilities: {jumps: 2},
-	uabilities: {jumps: 2} //put the same values as abilities
+	uabilities: {jumps: 2}, //put the same values as abilities
+	grabbing: false
 }
 
 

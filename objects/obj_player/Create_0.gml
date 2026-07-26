@@ -4,10 +4,10 @@ player_cons = {
 	gravity: 0.8,
 	ladder_speed: 5,
 	level_tilemap: layer_tilemap_get_id("test_tiles"),
-	max_hp: 3
+	max_hp: global.player.hp
 }
 
-hp = 3
+hp = global.player.hp
 _speed = 5
 velocity = global.player.velocity
 x = global.player.x
@@ -20,6 +20,7 @@ image_yscale = 1
 image_speed = 1
 image_frame = 0
 action = "idle" 
+inv_frames = false
 
 
 // reality shift based on global.shift_time

@@ -28,3 +28,5 @@ if not global.times_up
 	else {draw_text(gui_h, gui_v, t_shift)}
 else {
 	draw_text(gui_h, gui_v, "Time's up!")}
+	
+draw_sprite_ext(spr_towa_battery, global.player.hp, 50,30, 2, 2, 0, c_white, 1)
