@@ -78,10 +78,13 @@
     {"name":"inst_4313E6E6","path":"rooms/rm_level1_up/rm_level1_up.yy",},
     {"name":"inst_C8F8A19","path":"rooms/rm_level1_up/rm_level1_up.yy",},
     {"name":"inst_1D1E3CDD","path":"rooms/rm_level1_up/rm_level1_up.yy",},
+    {"name":"inst_53872661","path":"rooms/rm_level1_up/rm_level1_up.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_53872661","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_53872661","objectId":{"name":"obj_lever","path":"objects/obj_lever/obj_lever.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":736.0,},
+      ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"inactive_tilemap","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"inactive_tilemap","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":50,"SerialiseWidth":201,"TileCompressedData":[
           -163,-2147483648,1,225,-5,-2147483648,1,227,-6,-2147483648,2,225,227,-18,-2147483648,-4,210,1,247,-4,
           0,-159,-2147483648,1,225,-5,-2147483648,1,227,-6,-2147483648,2,225,227,-22,-2147483648,1,225,-4,0,-159,
