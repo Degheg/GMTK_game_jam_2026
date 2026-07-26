@@ -22,6 +22,9 @@ switch (action){
 	case ACTION.RUNNING_BOOST_JUMP:
 		draw_sprite_ext(spr_towa_run_boost_jump, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1);
 	break;
+	case ACTION.GRAB_OVERHEAD :
+		draw_sprite_ext(spr_towa_overhead_grab, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1);
+	break;
 	case ACTION.INJURY :
 		image_frame += image_speed/5;
 		image_frame = image_frame % sprite_get_number(spr_towa_hurt);
@@ -35,5 +38,8 @@ switch (action){
 		draw_sprite_ext(spr_towa_dead, image_index, x, y, global.player.image_direction, 1, 0, c_white, 1)
 	break;
 }
+
+if grabable 
+	draw_text(x, y - 32, "E")
 
 

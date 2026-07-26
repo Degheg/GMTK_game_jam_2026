@@ -21,7 +21,7 @@ global.audio = {
 global.spawn_point =
 {
 	x: 909,
-	y: 734
+	y: 704
 }
 
 //player variables to keep track of when changing reality

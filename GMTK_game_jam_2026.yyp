@@ -16,8 +16,8 @@
     {"$GMFolder":"","%Name":"sounds","folderPath":"folders/assets/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/assets/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"active_props","folderPath":"folders/assets/sprites/active_props.yy","name":"active_props","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"creatures","folderPath":"folders/assets/sprites/creatures.yy","name":"creatures","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"background_layers","folderPath":"folders/assets/sprites/background_layers.yy","name":"background_layers","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"creatures","folderPath":"folders/assets/sprites/creatures.yy","name":"creatures","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"gui","folderPath":"folders/assets/sprites/gui.yy","name":"gui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"player","folderPath":"folders/assets/sprites/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"jokesprites","folderPath":"folders/assets/sprites/player/jokesprites.yy","name":"jokesprites","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -45,7 +45,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"GMTK_game_jam_2026",
   "resources":[

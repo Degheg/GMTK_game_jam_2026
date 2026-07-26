@@ -61,31 +61,44 @@ var _movingPlatform = instance_place(x, y+velocity.y, obj_moving_platform)
 
 if (_movingPlatform != noone) {
 	if y < _movingPlatform.y+16 {
+		show_debug_message("Standing on Platform")
 		velocity.x = _movingPlatform.velocity.x + input_vx;
 		velocity.y = _movingPlatform.velocity.y;
 		global.player.uabilities.jump.number = global.player.abilities.jumps
 	}
 	else {
 		//platform under grabbing
-		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 30) {
-			global.player.uabilities.jump.number = global.player.abilities.jumps;
-			var current_platform = _movingPlatform;
-			x = current_platform.x;
-			y = current_platform.y + 35;
-			global.player.grabbing = true;
-			velocity.x = _movingPlatform.velocity.x;
-			velocity.y = _movingPlatform.velocity.y
-			action = ACTION.IDLE
+		if can_grab_platform and (distance_to_point(_movingPlatform.x, _movingPlatform.y) < 60) {
+			show_debug_message("Can Grab")
+			grabable = true
+			if keyboard_check(global.keybinds.interact) {
+				grabable = false
+				global.player.grabbing = true
+			}
+			if global.player.grabbing == true {
+				show_debug_message("Grabbing")
+				global.player.uabilities.jump.number = global.player.abilities.jumps;
+				var current_platform = _movingPlatform;
+				x = current_platform.x;
+				y = current_platform.y + 35;
+				velocity.x = _movingPlatform.velocity.x;
+				velocity.y = _movingPlatform.velocity.y;
+				grabable = false
+				action = ACTION.GRAB_OVERHEAD
+				if keyboard_check_pressed(global.keybinds.jump) || keyboard_check_pressed(global.keybinds.interact){
+					global.player.grabbing = false
+				}
+			}
 		}
 		else {
-			global.player.grabbing = false;
+			grabable = false
 			velocity.y = 6
 		}
 	}
 }
 else {
-	global.player.grabbing = true;
 	can_grab_platform = true
+	grabable = false
 };
 
 // right wall collision

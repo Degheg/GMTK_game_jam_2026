@@ -14,6 +14,7 @@ enum ACTION {
 	RUN,
 	RUNNING_JUMP,
 	RUNNING_BOOST_JUMP,
+	GRAB_OVERHEAD,
 	INJURY,
 	IDLE,
 	DEAD
@@ -26,6 +27,8 @@ x = global.player.x
 y = global.player.y
 can_grab_ladder = true
 can_grab_platform = true
+grabable = false
+global.player.grabbing = false
 if global.dead {
 	show_debug_message("Respawning")
 	global.player.hp = 3
