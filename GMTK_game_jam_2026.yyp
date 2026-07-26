@@ -45,7 +45,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"GMTK_game_jam_2026",
   "resources":[
@@ -122,6 +122,7 @@
     {"id":{"name":"spr_towa_hurt","path":"sprites/spr_towa_hurt/spr_towa_hurt.yy",},},
     {"id":{"name":"spr_towa_idle","path":"sprites/spr_towa_idle/spr_towa_idle.yy",},},
     {"id":{"name":"spr_towa_OK","path":"sprites/spr_towa_OK/spr_towa_OK.yy",},},
+    {"id":{"name":"spr_towa_overhead_grab","path":"sprites/spr_towa_overhead_grab/spr_towa_overhead_grab.yy",},},
     {"id":{"name":"spr_towa_run_boost_jump","path":"sprites/spr_towa_run_boost_jump/spr_towa_run_boost_jump.yy",},},
     {"id":{"name":"spr_towa_run_jump","path":"sprites/spr_towa_run_jump/spr_towa_run_jump.yy",},},
     {"id":{"name":"spr_towa_run","path":"sprites/spr_towa_run/spr_towa_run.yy",},},
