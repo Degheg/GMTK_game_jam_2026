@@ -14,7 +14,10 @@ else {
 
 
 // x velocity, for now only affected by keyboard inputs
-input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
+input_vx = 0
+if !stun {
+	input_vx = keyboard_check(global.keybinds.right)*_speed-keyboard_check(global.keybinds.left)*_speed;
+}
 sprint_coeff = keyboard_check(global.keybinds.sprint)*1.5+1
 if not global.dead {
 	if input_vx != 0 { 
@@ -40,10 +43,10 @@ if not global.dead {
 	} else {
 		if (velocity.x != 0) {
 			if (abs(velocity.x) > _speed) {
-				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.3, 0)
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.5, 0)
 				action = ACTION.RUN
 			} else {
-				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.5, 0)
+				velocity.x = sign(global.player.image_direction)*max(sign(global.player.image_direction)*velocity.x - 0.8, 0)
 				action = ACTION.WALK
 			}
 		} else {
@@ -123,7 +126,7 @@ else {
 };
 
 // jump
-if keyboard_check(global.keybinds.jump) {
+if keyboard_check(global.keybinds.jump) && !stun {
 	if global.player.uabilities.jump.timer > 0 {
 		global.player.uabilities.jump.timer += 1
 		velocity.y = -player_cons.jump_timer_height
@@ -158,7 +161,10 @@ if place_meeting(x, y, obj_hazard) || place_meeting(x, y, obj_floor_hazard) {
 	if not global.dead && !inv_frames {
 		global.player.hp -= 1
 		inv_frames = true
+		hurt_frames = true
+		stun = true
 		alarm[1] = 100
+		alarm[2] = 20
 		if (global.player.hp == 0) {
 			global.dead = true
 		}
@@ -180,11 +186,19 @@ depth = -infinity
 
 // death by falling in the void
 if y > room_height+1000 {
+	global.player.hp = 0
 	global.dead = true
 }
 
-// respawn
-if global.dead {
-	x = global.spawn_point.x
-	y = global.spawn_point.y
+//damage stun
+if stun {
+	action = ACTION.INJURY
 }
+
+// dead, waiting for respawn
+if global.dead {
+	show_debug_message("dead")
+	action = ACTION.DEAD
+}
+
+show_debug_message(global.dead)

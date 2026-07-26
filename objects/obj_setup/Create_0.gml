@@ -37,6 +37,7 @@ global.player =
 	grabbing: false
 }
 
+global.dead = false 
 
 //positions of moving platforms to keep track of when changing reality
 global.moving_platforms = {}
