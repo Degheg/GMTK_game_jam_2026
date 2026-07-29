@@ -10,17 +10,13 @@ function set_spawn(infos) {
 	global.spawn_point.y = infos[1]
 }
 
-
 /// @desc	Starts or stops the movement of designated moving platforms
 /// @arg	{Array}	platform_ids	An array of the ids of the affected platforms
-function toggle_platform_movement(platform_ids) {
-	for (var i=0; i>=len(platform_ids); i++) {
-		if object_get_name(platform_ids[i]) == "obj_moving_platform" {
-			pf = platform_ids[i]
-			pf.active = not pf.active
-		}
-		else {
-			show_error("Warning! - " + string(platform_ids[i]) + " at index " + string(i) + " of platform_ids is not a platform", false)
-		}
+function toggle_platform_movement(rect) {
+	var platform_ids = ds_list_create()
+	collision_rectangle_list(rect[0], rect[1], rect[2], rect[3], obj_moving_platform, false, true, platform_ids, false)
+	for (var i=0; i<ds_list_size(platform_ids); i++) {
+		var pf = platform_ids[| i]
+		pf.active = not pf.active
 	}
 }
