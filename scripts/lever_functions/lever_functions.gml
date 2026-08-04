@@ -20,5 +20,3 @@ function toggle_platform_movement(rect) {
 		pf.active = not pf.active
 	}
 }
-
-//delete this line
